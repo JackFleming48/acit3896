@@ -1,25 +1,25 @@
-def isPalindrome(str):
-    return str == str[::-1]
+# def isPalindrome(str):
+#     return str == str[::-1]
 
-print(isPalindrome("abba"))
-print(isPalindrome("abomination"))
-print(isPalindrome('racecar'))
-print(isPalindrome('r aceca r'))
-print(isPalindrome('race car'))
-print(isPalindrome('🙃🙂🙃'))
+# print(isPalindrome("abba"))
+# print(isPalindrome("abomination"))
+# print(isPalindrome('racecar'))
+# print(isPalindrome('r aceca r'))
+# print(isPalindrome('race car'))
+# print(isPalindrome('🙃🙂🙃'))
 
-# def counter(i):
-#     count = {}
+def counter(i):
+    count = {}
     
-#     for x in i:
-#         if x in count:
-#             count[x] += 1
-#         else:
-#             count[x] = 1
-#     return count
+    for x in i:
+        if x in count:
+            count[x] += 1
+        else:
+            count[x] = 1
+    return count
 
-# print(counter('abcabc'))
-# print(counter(['ab', 'ab', 'ba', 'ba', 'aba', 'ab']))
+print(counter('abcabc'))
+print(counter(['ab', 'ab', 'ba', 'ba', 'aba', 'ab']))
 
 
 # def ourSharedValues(iter1, iter2):
