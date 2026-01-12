@@ -33,4 +33,4 @@ def t_in_sorted(sorted, target):
     ind = 0
     sort = math.floor(len(sorted) / 2)
     while ind != target:
-        
+        pass
