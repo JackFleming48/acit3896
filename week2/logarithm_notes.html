@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title></title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p>When we say:<br>
+log<sub>4</sub>(1024)<br>
+It means if we start at one how many times to end up at 1024?<br>
+1x4x4x4x4x4 = 1024<br>
+so 5 times!<br></p>
+<p>In a broader definition:<br>
+If you wanna go from 1 to X, by multiplying by B, how many multiplications does it take?<br></p>
+<p><strong>Review</strong><br></p>
+<ol>
+<li>Logarithms are reverse exponentiation (but they are not roots)
+<ul>
+<li>and they are the important reverse-exponentiation for algorithms</li>
+</ul>
+</li>
+<li>(The other reverse is the root, we don't really care much)</li>
+<li>The logarithm asks &quot;how many times do I need to multiply by this base, to get from 1 to this other number?&quot;</li>
+<li>All of the math works out fine with fractions/floats, so don't stress.</li>
+<li>The notation is that the base goes in the subscript, and the result goes like a function argument
+<ul>
+<li>log<sub>b</sub>(big_number) = ????</li>
+</ul>
+</li>
+<li>Multiplying up is the same as dividing down
+<ul>
+<li>Getting to X from 1 by multiplying by 2, is the same as getting to 1 from X by dividing by 2</li>
+</ul>
+</li>
+<li>We saw some patterns.</li>
+<li>We learned how to change base (for calculators)</li>
+<li>In comp sci, if someone doesn't tell you the base, 99.9% chance that the base is 2.</li>
+</ol>
+<p>1x4x4x4x4x4 = 1024<br>
+This is very similar to doing this<br>
+1024 /4 /4 /4 /4 /4 = 1<br>
+So say we want to know how many times to cut 1024 in half to get to one?<br>
+log<sub>2</sub>(1024)<br>
+<br>
+In a computer science context, if you are doing logs and noone tells you the base:</p>
+<ul>
+<li><strong>ASSUME IT IS BASE 2</strong>
+<br>
+If you want to do:<br>
+log<sub>b</sub>X = log<sub>q</sub>X<br>
+on a calculator you need a scaling factor that makes b scale to q.<br>
+A simple way to do this is:<br>
+log<sub>q</sub>X / log<sub>b</sub>X<br></li>
+</ul>
+<p>In plain english:</p>
+<ol>
+<li>Type in the X</li>
+<li>press log</li>
+<li>Type in the B</li>
+<li>press log
+<br>
+<strong>Same with log and ln (log natural)</strong></li>
+</ol>
+
+            
+            
+        </body>
+        </html>
