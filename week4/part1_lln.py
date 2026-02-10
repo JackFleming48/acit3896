@@ -1,6 +1,8 @@
 class LLN:
     def __init__(self, contents):
-        pass
+        self.contents = contents
+        self.next = None
+
 
     def __repr__(self):
         # This isn't the greatest implementation ever, but I don't want to give too much away
@@ -8,24 +10,45 @@ class LLN:
         return f"LLN({str(self.contents)})"
 
     def insertAfter(self, contents):
+        new_node = LLN(contents)
+        new_node.next = self.next
+        self.next = new_node
+        return new_node
         # This function should made a new LLN, and it should attach that LLN after the current one
         #   ... and it should return the new LLN.
         # If there was already a node after the current one, don't destroy it, just bump it over to make space!
-        pass
 
     def toList(self):
         # This function is not supposed to print!
         # It should return a list, with all the contents from the Linked List
-        pass
+        ls = []
+        curr = self
+        while curr.next != None:
+            ls.append(curr.contents)
+            curr = curr.next
+        ls.append(curr.contents)   
+        return ls
+                
 
     def findLast(self):
         # This should return the LLN that is last in the LL
+        curr = self
+        while curr.next != None:
+            curr = curr.next
+        return curr
         pass
 
     def findAfter(self, needle):
         # This should return the LLN that has the needle as its contents
         #   But only if it's later-than the current self node
         #   And if there are more than one, return the first one, just like how `List.index` does.
+        curr = self.next
+        while curr != None:
+            if curr.contents == needle:
+                return curr
+            curr = curr.next
+        raise KeyError(needle)
+
         pass
 
 
