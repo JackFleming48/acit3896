@@ -49,8 +49,6 @@ class LLN:
             curr = curr.next
         raise KeyError(needle)
 
-        pass
-
 
 def main():
     print("\n** testing init and repr **")
@@ -142,3 +140,5 @@ But the dave is after the cat, that's fine: LLN(dave)
 
 if __name__ == "__main__":
     main()
+
+
